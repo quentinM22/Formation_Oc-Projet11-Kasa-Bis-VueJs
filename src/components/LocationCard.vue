@@ -1,0 +1,62 @@
+<script >
+export default {
+  props: {
+    title: String,
+    id: String
+  }
+}
+</script>
+<template>
+    <router-link :to="`/Location/${id}`" class="cmp-card">
+			<h2 className="cmp-card-title">{{title}}</h2>
+    </router-link>
+</template>
+<style>
+.cmp-card-container {
+	margin-top: 43px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	background-color: #f7f7f7;
+	width: calc(100% - 100px);
+	border-radius: 20px;
+	padding: 50px 50px 0;
+}
+.cmp-card {
+	display: flex;
+	height: 340px;
+	width: calc(33.33% - 20px);
+	background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(0, 0, 0, 0.5) 100%
+		),
+		#ff6060;
+	border-radius: 10px;
+	margin-bottom: 50px;
+}
+.cmp-card-title {
+	display: flex;
+	color: white;
+	font-weight: 500;
+	font-size: 18px;
+	padding: 10px;
+	margin-left: 20px;
+	align-items: flex-end;
+	width: 33.3%;
+}
+@media screen and (max-width: 767px) {
+	.cmp-card-container {
+		background-color: white;
+		width: 100%;
+		margin: 22px 0 22px;
+		padding: 0;
+	}
+	.cmp-card {
+		width: 100%;
+		margin-bottom: 22px;
+		height: 255px;
+	}
+}
+
+</style>
