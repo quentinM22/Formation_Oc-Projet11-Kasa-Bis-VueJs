@@ -8,7 +8,7 @@ import Data from '../data/logements.json'
 </script>
 
 <template>
-    <div>
+    <div className="cmp-body">
         <Header />
         <Banner />
         <div class="cmp-card-container">
