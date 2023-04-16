@@ -1,10 +1,23 @@
-<script setup>
+<script>
 import Header from '../components/Header.vue';
 import Banner from '../components/Banner.vue';
 import LocationCard from '../components/LocationCard.vue';
 import Footer from '../components/Footer.vue';
 
 import Data from '../data/logements.json'
+export default{
+    components: {
+        Header,
+        Banner,
+        LocationCard,
+        Footer
+    },
+    data(){
+        return{
+            Data: Data
+        }
+    }
+}
 </script>
 
 <template>
