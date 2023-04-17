@@ -7,7 +7,7 @@ export default {
 }
 </script>
 <template>
-    <router-link :to="`/Location/${id}`" class="cmp-card">
+    <router-link :to="`/Location/:id${id}`" class="cmp-card">
 			<h2 className="cmp-card-title">{{title}}</h2>
     </router-link>
 </template>

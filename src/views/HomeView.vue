@@ -5,18 +5,21 @@ import LocationCard from '../components/LocationCard.vue';
 import Footer from '../components/Footer.vue';
 
 import Data from '../data/logements.json'
-export default{
+export default {
     components: {
         Header,
         Banner,
         LocationCard,
         Footer
     },
-    data(){
-        return{
+    data() {
+        return {
             Data: Data
         }
-    }
+    }, created() {
+
+        document.title = `Kasa -  Accueil`;
+    },
 }
 </script>
 
@@ -25,10 +28,10 @@ export default{
         <Header />
         <Banner />
         <div class="cmp-card-container">
-                <LocationCard v-for="data, index in Data" :key="index" :title="data.title" :id="data.id"/>
-                
-            </div>
+            <LocationCard v-for="data, index in Data" :key="index" :title="data.title" :id="data.id" />
+
+        </div>
     </div>
- 
- <Footer />
+
+    <Footer />
 </template>

@@ -1,40 +1,40 @@
 <script>
-export default{
-    props:{
-        title: String,
-      description: String,
-      list: Array
-    },
-    data(){
-        return{
-            isOpen: false,
-        }
-    },
-    methods:{
-        toggle(){
-            this.isOpen = !this.isOpen;
-        }
-    }
+export default {
+	props: {
+		title: String,
+		description: String,
+		list: Array
+	},
+	data() {
+		return {
+			isOpen: false,
+		}
+	},
+	methods: {
+		toggle() {
+			this.isOpen = !this.isOpen;
+		}
+	}
 }
 </script>
 <template>
+	<div class="cmp-AboutCard-btn" v-on:click="toggle()">
+		{{ title }}
+		<i class="fa-solid" :class="{ 'fa-chevron-up': isOpen, 'fa-chevron-down': !isOpen }"></i>
+	</div>
 
-			<div className="cmp-AboutCard-btn" v-on:click="toggle()">
-				{{title}}
-				<i class="fa-solid" :class="{'fa-chevron-up': isOpen, 'fa-chevron-down': !isOpen}"></i>
-			</div>
-
-            <div v-if="isOpen" class="cmp-AboutCard-description">
-         <p v-if="description != null">{{ description }}</p>
-         <ul v-else>
-            <li v-for="item, index in list" :key="index">{{ item }}</li>
-         </ul>
-         </div>
+	<div v-if="isOpen" class="cmp-AboutCard-description">
+		<p v-if="description != null">{{ description }}</p>
+		<ul v-else>
+			<li v-for="item, index in list" :key="index">{{ item }}</li>
+		</ul>
+	</div>
 </template>
 <style>
-    .cmp-about-card-container {
+.cmp-about-card-container {
 	margin: 0 50px 0;
 }
+
 .cmp-AboutCard-btn {
 	position: relative;
 	display: flex;
@@ -46,6 +46,7 @@ export default{
 	margin: 20px 0 0;
 	z-index: 1;
 }
+
 .cmp-AboutCard-description {
 	position: relative;
 	background-color: #f6f6f6;
@@ -57,14 +58,14 @@ export default{
 	z-index: 0;
 }
 
-.cmp-AboutCard-description > li {
+.cmp-AboutCard-description>ul>li {
 	list-style: none;
 	padding: 0 5px 5px;
 }
+
 @media screen and (max-width: 767px) {
 	.cmp-about-card-container {
 		margin: 0;
 	}
 }
-
 </style>

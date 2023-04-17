@@ -1,17 +1,17 @@
 <script>
-export default{
-    data(){
-        return{
-            Logo: 'src/assets/images/Logo-footer.png'
-        }
-    }
+export default {
+	data() {
+		return {
+			Logo: '/src/assets/images/Logo-footer.png'
+		}
+	}
 }
 </script>
 <template>
-<footer>
-			<img :src='Logo' alt="Logo" />
-			<h2>© 2020 Kasa. All rights reserved</h2>
-		</footer>
+	<footer>
+		<img :src='Logo' alt="Logo" />
+		<h2>© 2020 Kasa. All rights reserved</h2>
+	</footer>
 </template>
 <style>
 footer {
@@ -23,13 +23,14 @@ footer {
 	flex-flow: column nowrap;
 	background-color: black;
 }
-footer > img {
+
+footer>img {
 	max-width: 122px;
 }
-footer > h2 {
+
+footer>h2 {
 	color: white;
 	font-weight: 500;
 	font-size: 24px;
 }
-
 </style>
