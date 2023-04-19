@@ -15,8 +15,8 @@ export default {
 </template>
 <style>
 footer {
-	padding: 50px 0 29px;
-	margin: 25px 0 0;
+	width: 100%;
+	padding: 70px 0 29px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -33,4 +33,13 @@ footer>h2 {
 	font-weight: 500;
 	font-size: 24px;
 }
-</style>
+
+@media screen and (max-width: 767px) {
+	footer {
+		padding: 60px 0 29px;
+	}
+
+	footer>h2 {
+		font-size: 12px;
+	}
+}</style>

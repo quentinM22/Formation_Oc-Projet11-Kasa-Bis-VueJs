@@ -24,56 +24,72 @@ export default {
 };
 </script>
 <template>
-
-    <div :style="{ backgroundImage: `url(${picture[count]})` }" class="cmp-carousel">
-      <div>
-        <div class="cmp-btn-carousel">
-          <i class="fa-solid fa-chevron-left" @click="handleDecrement"></i>
-          <i class="fa-solid fa-chevron-right" @click="handleIncrement"></i>
-        </div>
-        <p>{{ count + 1 }} / {{ picture.length }}</p>
+  <div :style="{ backgroundImage: `url(${picture[count]})` }" class="cmp-carousel">
+    <div>
+      <div class="cmp-btn-carousel">
+        <i class="fa-solid fa-chevron-left" @click="handleDecrement"></i>
+        <i class="fa-solid fa-chevron-right" @click="handleIncrement"></i>
       </div>
+      <p class="cmp-count-pics">{{ count + 1 }} / {{ picture.length }}</p>
     </div>
-
+  </div>
 </template>
 <style>
-    .cmp-carousel {
-	width: 100%;
-	height: 415px;
-	border-radius: 25px;
-	display: flex;
-	align-items: center;
-	/* flex-direction: column; */
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-}
-.cmp-carousel > div {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.cmp-carousel > div > p {
-	color: white;
-	position: absolute;
-	bottom: 0;
-	left: 50;
-}
-.cmp-carousel > div > .cmp-btn-carousel {
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
-}
-.cmp-carousel > div > .cmp-btn-carousel > i {
-	color: white;
-	font-size: 50px;
-	padding: 0 10px 0;
-}
-.cmp-carousel > div > .cmp-btn-carousel > i:hover {
-	color: #ff6060;
-	cursor: pointer;
+.cmp-carousel {
+  width: 100%;
+  height: 415px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
+.cmp-carousel>div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cmp-carousel>div>p {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 50;
+}
+
+.cmp-carousel>div>.cmp-btn-carousel {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.cmp-carousel>div>.cmp-btn-carousel>i {
+  color: white;
+  font-size: 50px;
+  padding: 0 10px 0;
+}
+
+.cmp-carousel>div>.cmp-btn-carousel>i:hover {
+  color: var(--primary);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .cmp-carousel {
+    height: 255px;
+  }
+
+  .cmp-carousel>div>.cmp-btn-carousel>i {
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .cmp-count-pics {
+    display: none;
+  }
+}
 </style>

@@ -1,16 +1,16 @@
 <script>
-import Header from '../components/Header.vue';
+import HeaderCmp from '../components/HeaderCmp.vue';
 import Banner from '../components/Banner.vue';
 import AboutCard from '../components/AboutCard.vue';
-import Footer from '../components/Footer.vue';
+import FooterCmp from '../components/FooterCmp.vue';
 
-import Data from '../data/logements.json'
+import Data from '../data/about.json'
 export default {
     components: {
-        Header,
+        HeaderCmp,
         Banner,
         AboutCard,
-        Footer
+        FooterCmp
     },
     data() {
         return {
@@ -24,8 +24,8 @@ export default {
 </script>
 
 <template>
+    <HeaderCmp />
     <div className="cmp-body">
-        <Header />
         <Banner />
         <div className="cmp-about-card-container">
             <AboutCard v-for="data, index in Data" :key="index" :title="data.title" :description="data.description" />
@@ -33,5 +33,5 @@ export default {
     </div>
 
 
-    <Footer />
+    <FooterCmp />
 </template>

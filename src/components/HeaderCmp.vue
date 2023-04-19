@@ -32,15 +32,15 @@ export default {
 
 <style>
 header {
-	width: 100%;
+	width: calc(100% - 100px);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin: 50px 0 50px;
+	padding: 50px 50px 50px;
 }
 
-header>img {
-	width: 25%;
+header>a>img {
+	width: 200px;
 }
 
 header>nav {
@@ -51,6 +51,7 @@ header>nav>ul {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
+	flex-flow: row wrap;
 	padding: 0;
 }
 
@@ -61,22 +62,27 @@ header>nav>ul>li {
 }
 
 header>nav>ul>li>a {
-	color: #ff6060;
+	color: var(--primary);
 	text-decoration: none;
 	padding-bottom: 2px;
 }
 
-header>nav>ul>li>a:hover {
-	border-bottom: solid 1px #ff6060;
+header>nav>ul>li>a:hover,
+header>nav>ul>li>.active {
+	border-bottom: solid 1px var(--primary);
 }
 
 @media screen and (max-width: 767px) {
 	header {
-		margin: 20px 0 20px;
+		width: calc(100% - 40px);
+		padding: 20px 20px 20px;
+	}
+
+	header>a>img {
+		width: 125px;
 	}
 
 	header>nav>ul>li>a {
 		font-size: 12px;
 	}
-}
-</style>
+}</style>

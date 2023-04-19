@@ -1,15 +1,20 @@
 <script >
 export default {
-  props: {
-    title: String,
-    id: String
-  }
+	props: {
+		title: String,
+		id: String,
+		cover: String
+	}
 }
 </script>
 <template>
-    <router-link :to="`/Location/:id${id}`" class="cmp-card">
-			<h2 className="cmp-card-title">{{title}}</h2>
-    </router-link>
+	<router-link :to="`/Location/:id${id}`" class="cmp-card" :style="{
+		backgroundImage: `linear-gradient(180deg,
+				      rgba(255, 255, 255, 0) 0%,
+				      rgba(0, 0, 0, 0.5) 100%), ${cover ? `url(${cover})` : '#ff6060'}`
+	}">
+		<h2 class="cmp-card-title">{{ title }}</h2>
+	</router-link>
 </template>
 <style>
 .cmp-card-container {
@@ -22,19 +27,38 @@ export default {
 	border-radius: 20px;
 	padding: 50px 50px 0;
 }
+
+.cmp-card-nocover {
+	display: flex;
+	height: 340px;
+	width: calc(33.33% - 20px);
+	background: linear-gradient(180deg,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(0, 0, 0, 0.5) 100%),
+		var(--primary);
+	border-radius: 10px;
+	margin-bottom: 50px;
+	text-decoration: none;
+}
+
 .cmp-card {
 	display: flex;
 	height: 340px;
 	width: calc(33.33% - 20px);
-	background: linear-gradient(
-			180deg,
-			rgba(255, 255, 255, 0) 0%,
-			rgba(0, 0, 0, 0.5) 100%
-		),
-		#ff6060;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	border-radius: 10px;
 	margin-bottom: 50px;
+	text-decoration: none;
 }
+
+.cmp-card-nocover:hover,
+.cmp-card:hover {
+	box-shadow: 3px 3px var(--primary);
+	transform: scale(1.01);
+}
+
 .cmp-card-title {
 	display: flex;
 	color: white;
@@ -45,6 +69,18 @@ export default {
 	align-items: flex-end;
 	width: 33.3%;
 }
+
+.cmp-card-nocover:hover,
+.cmp-card:hover>.cmp-card-title {
+	color: var(--primary);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.cmp-card {
+		width: calc(50% - 20px);
+	}
+}
+
 @media screen and (max-width: 767px) {
 	.cmp-card-container {
 		background-color: white;
@@ -52,11 +88,10 @@ export default {
 		margin: 22px 0 22px;
 		padding: 0;
 	}
+
 	.cmp-card {
 		width: 100%;
 		margin-bottom: 22px;
 		height: 255px;
 	}
-}
-
-</style>
+}</style>

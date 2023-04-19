@@ -39,12 +39,13 @@ export default {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-	background-color: #ff6060;
+	background-color: var(--primary);
 	color: white;
-	border-radius: 10px;
+	border-radius: 5px;
 	padding: 10px;
 	margin: 20px 0 0;
 	z-index: 1;
+	cursor: pointer;
 }
 
 .cmp-AboutCard-description {
@@ -58,7 +59,7 @@ export default {
 	z-index: 0;
 }
 
-.cmp-AboutCard-description>ul>li {
+.cmp-AboutCard-description>li {
 	list-style: none;
 	padding: 0 5px 5px;
 }
@@ -67,5 +68,12 @@ export default {
 	.cmp-about-card-container {
 		margin: 0;
 	}
-}
-</style>
+
+	.cmp-AboutCard-btn {
+		font-size: 13px;
+	}
+
+	.cmp-AboutCard-description {
+		font-size: 12px;
+	}
+}</style>

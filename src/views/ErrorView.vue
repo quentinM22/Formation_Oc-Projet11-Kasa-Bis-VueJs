@@ -1,9 +1,10 @@
 <script>
-import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
+
+import HeaderCmp from '../components/HeaderCmp.vue';
+import FooterCmp from '../components/FooterCmp.vue';
 
 export default {
-    components: { Header, Footer },
+    components: { HeaderCmp, FooterCmp },
     created() {
 
         document.title = `Kasa - Error ❌`;
@@ -12,8 +13,8 @@ export default {
 </script>
 
 <template>
+    <HeaderCmp />
     <div className="cmp-body">
-        <Header />
         <div>
             <div className="cmp-error-body">
                 <h1 className="cmp-error-title">404</h1>
@@ -25,5 +26,5 @@ export default {
         </div>
 
     </div>
-    <Footer />
+    <FooterCmp />
 </template>
