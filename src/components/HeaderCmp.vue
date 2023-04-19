@@ -1,13 +1,13 @@
 <script>
 import { RouterLink } from 'vue-router';
-
+import logo from '@/assets/images/Logo.png'
 export default {
 	components: {
 		RouterLink,
 	},
 	data() {
 		return {
-			logo: '/src/assets/images/Logo.png',
+			logo: logo,
 		};
 	},
 };
@@ -85,4 +85,5 @@ header>nav>ul>li>.active {
 	header>nav>ul>li>a {
 		font-size: 12px;
 	}
-}</style>
+}
+</style>

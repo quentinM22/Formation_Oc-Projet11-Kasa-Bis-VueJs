@@ -9,11 +9,13 @@
 </template>
   
 <script >
+import imgBg1 from '@/assets/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg'
+import imgBg2 from '@/assets/images/kalen-emsley-Bkci_8qcdvQ-unsplash.jpg'
 export default {
   data() {
     return {
-      imgBg1: 'src/assets/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpg',
-      imgBg2: 'src/assets/images/kalen-emsley-Bkci_8qcdvQ-unsplash.jpg',
+      imgBg1: imgBg1,
+      imgBg2: imgBg2,
       backgroundImagePath: '',
       displayTitle: "block",
     }
