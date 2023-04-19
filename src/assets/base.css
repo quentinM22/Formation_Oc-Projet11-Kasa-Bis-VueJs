@@ -9,7 +9,7 @@ body {
   color: var(--primary);
   font-weight: 500;
 }
-#root {
+#app {
   display: grid;
   grid-template-rows: auto 1fr;
   min-height: 100vh;

@@ -1,8 +1,9 @@
 <script>
+import logo from '@/assets/images/Logo-footer.png'
 export default {
 	data() {
 		return {
-			Logo: '/src/assets/images/Logo-footer.png'
+			Logo: logo
 		}
 	}
 }
@@ -42,4 +43,5 @@ footer>h2 {
 	footer>h2 {
 		font-size: 12px;
 	}
-}</style>
+}
+</style>
